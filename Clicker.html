@@ -1,111 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AXY Money Clicker</title>
-  <style>
-    body {
-      font-family: "Courier New", monospace;
-      background: #c0c0c0;
-      color: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      border: 5px solid #000;
-    }
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>AXY Money Clicker</title>
+	<style>
+		/* Classic Windows 95-ish style */
+		body {
+			font-family: "MS Sans Serif", Tahoma, Geneva, sans-serif;
+			background: #c0c0c0;
+			color: black;
+			margin: 0;
+			padding: 20px;
+			user-select: none;
+		}
 
-    h1 {
-      background: navy;
-      color: white;
-      width: 100%;
-      text-align: center;
-      margin: 0;
-      padding: 10px 0;
-      font-size: 24px;
-    }
+		h1 {
+			background: #000080;
+			color: white;
+			font-weight: bold;
+			padding: 6px 10px;
+			margin: 0 0 15px 0;
+			border: 2px solid #ffffff;
+		}
 
-    .window {
-      background: #fff;
-      border: 3px solid #000;
-      box-shadow: 5px 5px #555;
-      padding: 20px;
-      text-align: center;
-      width: 300px;
-    }
+		#money {
+			font-size: 28px;
+			margin: 20px 0;
+			background: white;
+			border: 2px inset #fff;
+			padding: 10px;
+			width: 200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-    button {
-      background: #d3d3d3;
-      border: 2px outset #fff;
-      padding: 10px 20px;
-      margin: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: transform 0.1s;
-    }
+		button {
+			font-family: inherit;
+			font-size: 14px;
+			padding: 6px 10px;
+			margin: 5px;
+			border: 2px outset #fff;
+			background: #c0c0c0;
+			cursor: pointer;
+		}
 
-    button:active {
-      border-style: inset;
-      transform: scale(0.95);
-    }
+		button:active {
+			border-style: inset;
+		}
 
-    #counter {
-      font-size: 32px;
-      margin: 20px 0;
-      color: green;
-    }
+		#clickButton {
+			background: #000080;
+			color: white;
+			font-weight: bold;
+			font-size: 22px;
+			padding: 15px 40px;
+			margin: 0 auto 20px auto;
+			display: block;
+		}
 
-    #upgrade {
-      background: gold;
-    }
-  </style>
+		.section {
+			background: #e0e0e0;
+			border: 2px outset #fff;
+			padding: 10px;
+			margin: 10px auto;
+			max-width: 350px;
+		}
+
+		.shop-item {
+			border: 2px inset #fff;
+			padding: 5px;
+			margin: 5px 0;
+		}
+
+		.shop-item strong {
+			display: block;
+		}
+
+		#message {
+			height: 20px;
+			font-weight: bold;
+			text-align: center;
+			margin: 5px 0 10px 0;
+			color: #800000;
+		}
+
+		#casino {
+			margin-top: 15px;
+		}
+
+		#slots {
+			font-size: 40px;
+			letter-spacing: 10px;
+			background: white;
+			padding: 10px;
+			border: 2px inset #fff;
+			margin-bottom: 8px;
+			user-select: none;
+		}
+
+		#slotsMessage {
+			height: 20px;
+			font-weight: bold;
+			color: #008000;
+		}
+
+		#achievements {
+			max-height: 150px;
+			overflow-y: auto;
+			background: white;
+			border: 2px inset #fff;
+			padding: 5px;
+			font-size: 12px;
+			margin-top: 10px;
+		}
+
+		#achievements h3 {
+			margin: 0 0 5px 0;
+		}
+
+		#prestige-info {
+			font-size: 14px;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+
+		#saveImportExport {
+			margin-top: 15px;
+			text-align: center;
+		}
+
+		input[type="text"] {
+			font-family: monospace;
+			width: 90%;
+			margin: 5px 0;
+			padding: 5px;
+			border: 2px inset #fff;
+		}
+
+		#confettiCanvas {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			pointer-events: none;
+			z-index: 9999;
+		}
+	</style>
 </head>
+
 <body>
-  <h1>AXY MONEY CLICKER</h1>
-  <div class="window">
-    <p id="counter">$0</p>
-    <button id="clickBtn">💰 Click for Cash</button><br />
-    <button id="upgrade">Upgrade (Cost: $50)</button>
-  </div>
+	<h1>AXY Money Clicker</h1>
+	<div id="money">$0</div>
+	<button id="clickButton">Tap to Make Money</button>
+	<div id="message"></div>
 
-  <script>
-    let money = parseInt(localStorage.getItem("money")) || 0;
-    let clickValue = parseInt(localStorage.getItem("clickValue")) || 1;
-    let upgradeCost = parseInt(localStorage.getItem("upgradeCost")) || 50;
+	<div class="section">
+		<h2>Upgrades</h2>
+		<div class="shop-item">
+			<strong>Better Taps</strong>
+			+$1 per click<br />
+			Cost: $<span id="clickUpgradeCost">50</span><br />
+			<button id="buyClickUpgrade">Buy</button>
+		</div>
+		<div class="shop-item">
+			<strong>Auto Clicker</strong>
+			+$1/sec<br />
+			Cost: $<span id="autoClickerCost">100</span><br />
+			Owned: <span id="autoClickerCount">0</span><br />
+			<button id="buyAutoClicker">Buy</button>
+		</div>
+		<div class="shop-item">
+			<strong>Mega Tap</strong>
+			+$10 per click<br />
+			Cost: $<span id="megaTapCost">1000</span><br />
+			Owned: <span id="megaTapCount">0</span><br />
+			<button id="buyMegaTap">Buy</button>
+		</div>
+		<div class="shop-item">
+			<strong>Super Auto Clicker</strong>
+			+$10/sec<br />
+			Cost: $<span id="superAutoClickerCost">5000</span><br />
+			Owned: <span id="superAutoClickerCount">0</span><br />
+			<button id="buySuperAutoClicker">Buy</button>
+		</div>
+		<div class="shop-item">
+			<strong>Multiplier Upgrade</strong>
+			+0.1x multiplier<br />
+			Cost: $<span id="multiplierUpgradeCost">10000</span><br />
+			Owned: <span id="multiplierUpgradeCount">0</span><br />
+			<button id="buyMultiplierUpgrade">Buy</button>
+		</div>
+	</div>
 
-    const counter = document.getElementById("counter");
-    const clickBtn = document.getElementById("clickBtn");
-    const upgradeBtn = document.getElementById("upgrade");
+	<div class="section">
+		<h2>Prestige</h2>
+		<div id="prestige-info">Prestige Points: <span id="prestigePoints">0</span><br />
+			Multiplier: <span id="prestigeMultiplier">1.0</span>x</div>
+		<button id="prestigeButton">Prestige (Need $1,000,000)</button>
+	</div>
 
-    function updateDisplay() {
-      counter.textContent = "$" + money.toLocaleString();
-      upgradeBtn.textContent = `Upgrade (Cost: $${upgradeCost.toLocaleString()})`;
-    }
+	<div class="section" id="casino">
+		<h2>🎰 Casino</h2>
+		<div id="slots">🍒 🍋 🍉</div>
+		<div id="slotsMessage"></div>
+		<button id="slotsSpinBtn">Spin Slots ($10)</button>
+	</div>
 
-    clickBtn.addEventListener("click", () => {
-      money += clickValue;
-      localStorage.setItem("money", money);
-      updateDisplay();
-    });
+	<div class="section">
+		<h2>Achievements</h2>
+		<div id="achievements">
+			<h3>Achievements Unlocked:</h3>
+		</div>
+	</div>
 
-    upgradeBtn.addEventListener("click", () => {
-      if (money >= upgradeCost) {
-        money -= upgradeCost;
-        clickValue++;
-        upgradeCost = Math.floor(upgradeCost * 1.5);
-        localStorage.setItem("money", money);
-        localStorage.setItem("clickValue", clickValue);
-        localStorage.setItem("upgradeCost", upgradeCost);
-        updateDisplay();
-      } else {
-        alert("Not enough money!");
-      }
-    });
+	<div class="section" id="saveImportExport">
+		<h2>Save / Load</h2>
+		<button id="exportBtn">Export Save</button><br />
+		<input type="text" id="saveCodeInput" placeholder="Paste save code here" />
+		<button id="importBtn">Import Save</button>
+	</div>
 
-    updateDisplay();
-  </script>
+	<div class="section">
+		<button id="soundToggle">Sound: ON</button>
+		<button id="resetButton">Reset Game</button>
+	</div>
+
+	<canvas id="confettiCanvas"></canvas>
+
+	<script>
+		// Paste your full AXY Money Clicker JS code here (exactly as you gave it)
+		// This includes all game logic, upgrades, prestige, slots, save/load, confetti
+	</script>
 </body>
 </html>
