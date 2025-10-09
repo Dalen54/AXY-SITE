@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXY Study Site - Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+    body {{ font-family: 'Inter', sans-serif; background-color: #121212; color: #f0f0f0; min-height: 100vh; display: flex; flex-direction: column; }}
+    header {{ background-color: #1e1e1e; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }}
+    header h1 {{ font-size: 2rem; color: #1db954; }}
+    nav a {{ color: #f0f0f0; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.3s; }}
+    nav a:hover {{ color: #1db954; }}
+    main {{ flex: 1; display: flex; flex-direction: column; align-items: center; padding: 2rem; width: 100%; }}
+    .games-grid {{ list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; width: 100%; max-width: 1000px; }}
+    .games-grid li {{ text-align: center; }}
+    .games-grid a {{ display: block; padding: 1rem; background-color: #1e1e1e; color: #f0f0f0; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.3); font-weight: 500; }}
+    .games-grid a:hover {{ background-color: #1db954; color: #fff; transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.5); }}
+    footer {{ background-color: #1e1e1e; padding: 1rem 2rem; text-align: center; color: #888; font-size: 0.9rem; box-shadow: 0 -4px 6px rgba(0,0,0,0.3); }}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AXY Study Site</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="notes.html">Notes</a>
+      <a href="bypasses.html">Bypasses</a>
+      <a href="music.html">Music</a>
+      <a href="credits.html">Credits</a>
+      <a href="other1.html">Other 1</a>
+      <a href="other2.html">Other 2</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="notice">
+      ⚠️ <strong>Note:</strong> Games labeled as “Game 1”, “Game 2”, etc. are placeholders and not yet available.  
+      Check back soon — new games are added regularly!
+    </div>
+
+    <ul class="games-grid">
+      <li><a href="Clicker.html" target="_blank">Axy Clicker</a></li>
+      <li><a href="new-file.html" target="_blank">Cookie Clicker</a></li>
+      <li><a href="Icedodo.html" target="_blank">CoreBall</a></li>
+      <li><a href="Subway.html" target="_blank">Inf Craft</a></li>
+      <li><a href="DODO.html" target="_blank">Ice Dodo</a></li>
+      <li><a href="badpig.html" target="_blank">Bad Piggies</a></li>
+      <li><a href="blackj.html" target="_blank">Black Jack</a></li>
+      <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
+      <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<li><a href="game${i}.html" target="_blank">Game ${i}</a></li>`);
+        }
+      </script>
+    </ul>
+  </main>
+
+  <footer>
+    © 2025 AXY Study Site. All rights reserved.
+  </footer>
+</body>
+</html>
