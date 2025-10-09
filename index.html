@@ -4,9 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AXY Study Site</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212; /* dark background */
+      color: #f0f0f0; /* light text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #1db954; /* accent color */
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    li {
+      text-align: center;
+    }
+
+    a {
+      display: block;
+      padding: 0.8rem 1rem;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    a:hover {
+      background-color: #1db954;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+      ul {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>AXY STUDY SITE</h1>
+  <h1>AXY Study Site</h1>
   <ul>
     <li><a href="Clicker.html" target="_blank">Axy Clicker</a></li>
     <li><a href="new-file.html" target="_blank">CookieClicker</a></li>
@@ -17,7 +87,6 @@
     <li><a href="blackj.html" target="_blank">Black Jack</a></li>
     <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
     <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
-
     <li><a href="game1.html" target="_blank">Game 1</a></li>
     <li><a href="game2.html" target="_blank">Game 2</a></li>
     <li><a href="game3.html" target="_blank">Game 3</a></li>
