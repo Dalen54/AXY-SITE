@@ -20,7 +20,6 @@
       flex-direction: column;
     }
 
-    /* Header */
     header {
       background-color: #1e1e1e;
       padding: 1.5rem 2rem;
@@ -40,7 +39,6 @@
       width: 50px;
     }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       padding: 4rem 2rem;
@@ -62,47 +60,6 @@
       color: #ddd;
     }
 
-    /* Form Redirect Section */
-    .form-section {
-      text-align: center;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .form-section h3 {
-      color: #1db954;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .form-section p {
-      color: #ccc;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-    }
-
-    .form-section button {
-      background-color: #1db954;
-      color: white;
-      border: none;
-      padding: 0.9rem 1.8rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .form-section button:hover {
-      background-color: #17a24a;
-      transform: scale(1.05);
-    }
-
-    /* Main game section */
     main {
       flex: 1;
       display: flex;
@@ -110,6 +67,19 @@
       align-items: center;
       padding: 2rem;
       width: 100%;
+    }
+
+    .notice {
+      max-width: 800px;
+      background: #1e1e1e;
+      border: 2px solid #1db954;
+      color: #ccc;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .games-grid {
@@ -144,7 +114,6 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.5);
     }
 
-    /* Footer */
     footer {
       background-color: #1e1e1e;
       padding: 1rem 2rem;
@@ -154,7 +123,6 @@
       box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       header h1 { font-size: 1.5rem; }
       .hero h2 { font-size: 1.8rem; }
@@ -163,32 +131,25 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <h1>AXY Study Site</h1>
     <img src="logo.png" alt="AXY Logo">
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h2>Welcome to the Ultimate Game Portal!</h2>
     <p>Click any game below to start playing instantly. Enjoy fun, challenges, and more!</p>
   </section>
 
-  <!-- Google Form Section -->
-  <section class="form-section">
-    <h3>📋 Feedback & Suggestions</h3>
-    <p>Got ideas or found a bug? Share your feedback and help make AXY better!</p>
-    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdyu8fgn_w_Kz7KnHV9uJdkygeW24UqCtwHigKYPS9UWlYnHQ/viewform?usp=header', '_blank')">
-      Open Feedback Form
-    </button>
-  </section>
-
-  <!-- Games Section -->
   <main>
+    <div class="notice">
+      ⚠️ <strong>Note:</strong> Games labeled as “Game 1”, “Game 2”, etc. are placeholders and not yet available.  
+      Check back soon — new games are added regularly!
+    </div>
+
     <ul class="games-grid">
       <li><a href="Clicker.html" target="_blank">Axy Clicker</a></li>
-      <li><a href="new-file.html" target="_blank">CookieClicker</a></li>
+      <li><a href="new-file.html" target="_blank">Cookie Clicker</a></li>
       <li><a href="Icedodo.html" target="_blank">CoreBall</a></li>
       <li><a href="Subway.html" target="_blank">Inf Craft</a></li>
       <li><a href="DODO.html" target="_blank">Ice Dodo</a></li>
@@ -196,25 +157,20 @@
       <li><a href="blackj.html" target="_blank">Black Jack</a></li>
       <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
       <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
-      <li><a href="game1.html" target="_blank">Game 1</a></li>
-      <li><a href="game2.html" target="_blank">Game 2</a></li>
-      <li><a href="game3.html" target="_blank">Game 3</a></li>
-      <li><a href="game4.html" target="_blank">Game 4</a></li>
-      <li><a href="game5.html" target="_blank">Game 5</a></li>
-      <li><a href="game6.html" target="_blank">Game 6</a></li>
-      <li><a href="game7.html" target="_blank">Game 7</a></li>
-      <li><a href="game8.html" target="_blank">Game 8</a></li>
-      <li><a href="game9.html" target="_blank">Game 9</a></li>
-      <li><a href="game10.html" target="_blank">Game 10</a></li>
+
+      <!-- Placeholder games 1–100 -->
+      <script>
+        for (let i = 1; i <= 100; i++) {
+          document.write(`<li><a href="game${i}.html" target="_blank">Game ${i}</a></li>`);
+        }
+      </script>
     </ul>
   </main>
 
-  <!-- Footer -->
   <footer>
     © 2025 AXY Study Site. All rights reserved.
   </footer>
 
-  <!-- Auto-update script to bypass browser cache -->
   <script>
     const version = Date.now();
     document.querySelectorAll('.games-grid a').forEach(link => {
