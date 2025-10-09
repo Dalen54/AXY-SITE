@@ -147,6 +147,7 @@
       <li><a href="blackj.html" target="_blank">Black Jack</a></li>
       <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
       <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
+
       <li><a href="game1.html" target="_blank">Game 1</a></li>
       <li><a href="game2.html" target="_blank">Game 2</a></li>
       <li><a href="game3.html" target="_blank">Game 3</a></li>
@@ -164,5 +165,13 @@
   <footer>
     © 2025 AXY Study Site. All rights reserved.
   </footer>
+
+  <!-- Auto-update script to bypass browser cache -->
+  <script>
+    const version = Date.now(); // unique timestamp
+    document.querySelectorAll('.games-grid a').forEach(link => {
+      link.href = link.href + '?v=' + version;
+    });
+  </script>
 </body>
 </html>
