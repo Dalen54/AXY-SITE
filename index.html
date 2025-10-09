@@ -62,6 +62,46 @@
       color: #ddd;
     }
 
+    /* Form Redirect Section */
+    .form-section {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .form-section h3 {
+      color: #1db954;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .form-section p {
+      color: #ccc;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .form-section button {
+      background-color: #1db954;
+      color: white;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .form-section button:hover {
+      background-color: #17a24a;
+      transform: scale(1.05);
+    }
+
     /* Main game section */
     main {
       flex: 1;
@@ -135,6 +175,15 @@
     <p>Click any game below to start playing instantly. Enjoy fun, challenges, and more!</p>
   </section>
 
+  <!-- Google Form Section -->
+  <section class="form-section">
+    <h3>📋 Feedback & Suggestions</h3>
+    <p>Got ideas or found a bug? Share your feedback and help make AXY better!</p>
+    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdyu8fgn_w_Kz7KnHV9uJdkygeW24UqCtwHigKYPS9UWlYnHQ/viewform?usp=header', '_blank')">
+      Open Feedback Form
+    </button>
+  </section>
+
   <!-- Games Section -->
   <main>
     <ul class="games-grid">
@@ -147,7 +196,6 @@
       <li><a href="blackj.html" target="_blank">Black Jack</a></li>
       <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
       <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
-
       <li><a href="game1.html" target="_blank">Game 1</a></li>
       <li><a href="game2.html" target="_blank">Game 2</a></li>
       <li><a href="game3.html" target="_blank">Game 3</a></li>
@@ -168,7 +216,7 @@
 
   <!-- Auto-update script to bypass browser cache -->
   <script>
-    const version = Date.now(); // unique timestamp
+    const version = Date.now();
     document.querySelectorAll('.games-grid a').forEach(link => {
       link.href = link.href + '?v=' + version;
     });
