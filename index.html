@@ -4,99 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AXY Study Site</title>
-  
-  <!-- Google Font -->
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #121212; /* dark background */
-      color: #f0f0f0; /* light text */
+      background-color: #121212;
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background-color: #1e1e1e;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #1db954;
+    }
+
+    header img {
+      height: 50px;
+      width: 50px;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #1db954 0%, #1e1e1e 100%);
+      border-radius: 15px;
+      margin: 2rem auto;
+      max-width: 1000px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    /* Main game section */
+    main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
       padding: 2rem;
+      width: 100%;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #1db954; /* accent color */
-    }
-
-    ul {
+    .games-grid {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 1rem;
       width: 100%;
-      max-width: 900px;
+      max-width: 1000px;
     }
 
-    li {
+    .games-grid li {
       text-align: center;
     }
 
-    a {
+    .games-grid a {
       display: block;
-      padding: 0.8rem 1rem;
+      padding: 1rem;
       background-color: #1e1e1e;
       color: #f0f0f0;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 12px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      font-weight: 500;
     }
 
-    a:hover {
+    .games-grid a:hover {
       background-color: #1db954;
       color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
     }
 
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 2rem;
-      }
-      ul {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      }
+    /* Footer */
+    footer {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .hero h2 { font-size: 1.8rem; }
+      .games-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
     }
   </style>
 </head>
 <body>
-  <h1>AXY Study Site</h1>
-  <ul>
-    <li><a href="Clicker.html" target="_blank">Axy Clicker</a></li>
-    <li><a href="new-file.html" target="_blank">CookieClicker</a></li>
-    <li><a href="Icedodo.html" target="_blank">CoreBall</a></li>
-    <li><a href="Subway.html" target="_blank">Inf Craft</a></li>
-    <li><a href="DODO.html" target="_blank">Ice Dodo</a></li>
-    <li><a href="badpig.html" target="_blank">Bad Piggies</a></li>
-    <li><a href="blackj.html" target="_blank">Black Jack</a></li>
-    <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
-    <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
-    <li><a href="game1.html" target="_blank">Game 1</a></li>
-    <li><a href="game2.html" target="_blank">Game 2</a></li>
-    <li><a href="game3.html" target="_blank">Game 3</a></li>
-    <li><a href="game4.html" target="_blank">Game 4</a></li>
-    <li><a href="game5.html" target="_blank">Game 5</a></li>
-    <li><a href="game6.html" target="_blank">Game 6</a></li>
-    <li><a href="game7.html" target="_blank">Game 7</a></li>
-    <li><a href="game8.html" target="_blank">Game 8</a></li>
-    <li><a href="game9.html" target="_blank">Game 9</a></li>
-    <li><a href="game10.html" target="_blank">Game 10</a></li>
-  </ul>
+  <!-- Header -->
+  <header>
+    <h1>AXY Study Site</h1>
+    <img src="logo.png" alt="AXY Logo">
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to the Ultimate Game Portal!</h2>
+    <p>Click any game below to start playing instantly. Enjoy fun, challenges, and more!</p>
+  </section>
+
+  <!-- Games Section -->
+  <main>
+    <ul class="games-grid">
+      <li><a href="Clicker.html" target="_blank">Axy Clicker</a></li>
+      <li><a href="new-file.html" target="_blank">CookieClicker</a></li>
+      <li><a href="Icedodo.html" target="_blank">CoreBall</a></li>
+      <li><a href="Subway.html" target="_blank">Inf Craft</a></li>
+      <li><a href="DODO.html" target="_blank">Ice Dodo</a></li>
+      <li><a href="badpig.html" target="_blank">Bad Piggies</a></li>
+      <li><a href="blackj.html" target="_blank">Black Jack</a></li>
+      <li><a href="serf.html" target="_blank">Subway Surfers</a></li>
+      <li><a href="cow.html" target="_blank">Crazy Cattle 3D</a></li>
+      <li><a href="game1.html" target="_blank">Game 1</a></li>
+      <li><a href="game2.html" target="_blank">Game 2</a></li>
+      <li><a href="game3.html" target="_blank">Game 3</a></li>
+      <li><a href="game4.html" target="_blank">Game 4</a></li>
+      <li><a href="game5.html" target="_blank">Game 5</a></li>
+      <li><a href="game6.html" target="_blank">Game 6</a></li>
+      <li><a href="game7.html" target="_blank">Game 7</a></li>
+      <li><a href="game8.html" target="_blank">Game 8</a></li>
+      <li><a href="game9.html" target="_blank">Game 9</a></li>
+      <li><a href="game10.html" target="_blank">Game 10</a></li>
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 AXY Study Site. All rights reserved.
+  </footer>
 </body>
 </html>
