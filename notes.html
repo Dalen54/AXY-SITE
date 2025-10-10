@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,19 @@
     nav a { color: #f0f0f0; text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.3s; }
     nav a:hover { color: #1db954; }
     main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 2rem; width: 100%; }
+    main h2 { font-size: 2rem; color: #1db954; margin-bottom: 1rem; }
+    .notes-section { 
+      background-color: #1e1e1e; 
+      border: 2px solid #1db954; 
+      border-radius: 12px; 
+      padding: 2rem; 
+      max-width: 900px; 
+      width: 100%; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5); 
+    }
+    .note { margin-bottom: 1.5rem; }
+    .note h3 { color: #1db954; margin-bottom: 0.5rem; }
+    .note p { line-height: 1.6; }
     footer { background-color: #1e1e1e; padding: 1rem 2rem; text-align: center; color: #888; font-size: 0.9rem; box-shadow: 0 -4px 6px rgba(0,0,0,0.3); }
   </style>
 </head>
@@ -33,7 +45,21 @@
 
   <main>
     <h2>Notes</h2>
-    <p>Placeholder content for Notes page. Replace this with your own content.</p>
+    <div class="notes-section">
+      <!-- Example Note -->
+      <div class="note">
+        <h3>Note Title 1</h3>
+        <p>This is where the content of your first note goes. Replace it with your own content.</p>
+      </div>
+
+      <!-- Example Note -->
+      <div class="note">
+        <h3>Note Title 2</h3>
+        <p>This is another note. You can add as many notes as you want here by copying the div with class="note".</p>
+      </div>
+
+      <!-- Add more notes below -->
+    </div>
   </main>
 
   <footer>
